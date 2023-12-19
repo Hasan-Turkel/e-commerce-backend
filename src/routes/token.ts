@@ -12,7 +12,7 @@ const token = require("../controllers/token");
 
 // URL: /tokens
 
-// router.use(isAdmin)
+router.use(isAdmin)
 
 router.route("/").get(token.list).post(token.create);
 
