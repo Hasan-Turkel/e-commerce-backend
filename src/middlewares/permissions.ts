@@ -18,8 +18,6 @@ interface AuthUser extends Request {
 module.exports = {
 
     isLogin: (req:AuthUser, res:ErrRes, next:NextFunction) => {
-
-        next()
       
 
         // any User:
@@ -36,8 +34,7 @@ module.exports = {
 
     isAdmin: (req:AuthUser, res:ErrRes, next:NextFunction) => {
 
-       
-        next()
+    
         
         // only Admin:
         if (req.user && req.user.is_active && req.user.is_superadmin) {
