@@ -185,6 +185,20 @@ module.exports = {
           data,
           new: await User.findOne(filters),
         });
+      } else if (req.body.process == "buy"){
+
+        const newBox = user.box.map((item: any) => ({ ...item, date: new Date() }) );
+        const data = await User.updateOne(
+          filters,
+          { box: [], purchases: newBox },
+          { runValidators: true }
+        );
+        res.status(202).send({
+          error: false,
+          data,
+          new: await User.findOne(filters),
+        });
+
       }
     } else {
       const data = await User.updateOne(filters, req.body, {
