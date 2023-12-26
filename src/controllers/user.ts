@@ -101,6 +101,8 @@ module.exports = {
                     "username": "test",
                     "password": "1234",
                     "email": "test@site.com",
+                    "box":[],
+                    "purchase":[]
                   
                 }
             }
@@ -190,7 +192,7 @@ module.exports = {
         const newBox = user.box.map((item: any) => ({ ...item, date: new Date() }) );
         const data = await User.updateOne(
           filters,
-          { box: [], purchases: newBox },
+          { box: [], purchases: [...user.purchases, ...newBox] },
           { runValidators: true }
         );
         res.status(202).send({
