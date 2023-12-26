@@ -56,7 +56,7 @@ app.use(require('./src/middlewares/authentication'))
 app.all('/', (req:AuthUser, res: Response) => {
     res.send({
         error: false,
-        message: 'Welcome to Blog App',
+        message: 'Welcome to E-Commerce Api',
         documents: {
             swagger: '/documents/swagger',
             redoc: '/documents/redoc',

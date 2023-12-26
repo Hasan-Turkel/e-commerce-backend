@@ -18,7 +18,7 @@ router.use("/tokens", require("./token"));
 // comment:
 
 // document:
-// router.use('/documents', require('./document'))
+router.use('/documents', require('./document'))
 
 /* ------------------------------------------------------- */
 module.exports = router;
